@@ -2,7 +2,7 @@
 local TabPosition = gui.Reference("VISUALS");
 local TAB = gui.Tab(TabPosition, "himwari_prefire_helper", "Prefire Helper");
 local MULTIBOX = gui.Groupbox(TAB, "General Settings", 15, 15, 295, 400);
-local EDIT_ENABLED = gui.Checkbox(MULTIBOX, "phelper_edit_enabled", "Edit Enabled", 1 );
+local EDIT_ENABLED = gui.Checkbox(MULTIBOX, "phelper_edit_enabled", "Edit Enabled", 0 );
 local ESP_COLOR = gui.ColorPicker(MULTIBOX, "phelper_esp_color", "ESP Color", 0, 183, 235, 255);
 local LOAD_KEY = gui.Keybox(MULTIBOX, "phelper_load_key", "Load Key", 69);
 
@@ -363,7 +363,7 @@ local function onDraw()
       if(v ~= nil) then
         if(src.x > v.start.x and src.y > v.start.y and src.z > v.start.z
           and src.x < v.finish.x and src.y < v.finish.y and src.z < v.finish.z) then
-          drawLines(zones[zIndex].lines, true);
+          drawLines(v.lines, true);
         end
       end
     end
