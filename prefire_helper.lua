@@ -211,10 +211,12 @@ local function loadData()
       
       currentLine.vec1 = Vector3(tonumber(lData[2]), tonumber(lData[3]), tonumber(lData[4]));
       currentLine.vec2 = Vector3(tonumber(lData[5]), tonumber(lData[6]), tonumber(lData[7]));
+      
+      currentZone.lines[lIndex] = currentLine;
     end  
   end
   
-  currentZone.lines[lIndex] = currentLine;
+  
   zones[zIndex] = currentZone;
   
   client.ChatSay("Loaded: " .. tablelength(zones));
